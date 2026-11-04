@@ -1,0 +1,7 @@
+# Optional dependencies for --model official.
+# The lite model does not need these and is recommended for 2GB CPU deployment.
+einops
+timm
+mamba-ssm
+nnunetv2
+dynamic-network-architectures

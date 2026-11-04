@@ -1,0 +1,34 @@
+[
+  {
+    "evidence_id": "SOP-GROUNDING-001",
+    "title": "SpineVision 报告证据规范",
+    "section": "grounding",
+    "content": "报告中的节段、侧别、测量值和病变候选必须来自结构化工具输出；证据不足时应标记为未知，不得由语言模型补全。",
+    "source": "internal_sop",
+    "metadata": {"modality": "MRI", "document_type": "safety_sop", "version": "1.0"}
+  },
+  {
+    "evidence_id": "SOP-REVIEW-001",
+    "title": "SpineVision 人工复核规范",
+    "section": "human_review",
+    "content": "分割质量控制失败、分类置信度低于预设阈值、节段或数值不一致、检索证据缺失时，病例不得自动完成，应进入人工复核。",
+    "source": "internal_sop",
+    "metadata": {"modality": "MRI", "document_type": "safety_sop", "version": "1.0"}
+  },
+  {
+    "evidence_id": "SOP-MASK-001",
+    "title": "分割结果使用边界",
+    "section": "segmentation",
+    "content": "分割 mask 仅用于定位和确定性测量。若标签字典、空间几何或模型适用序列尚未验证，不得据此自动生成具体解剖节段诊断。",
+    "source": "internal_sop",
+    "metadata": {"modality": "MRI", "document_type": "model_sop", "version": "1.0"}
+  },
+  {
+    "evidence_id": "SOP-REPORT-001",
+    "title": "结构化报告草稿规范",
+    "section": "reporting",
+    "content": "自动输出属于报告草稿，应区分工具直接观察、规则推导和模型推断，并显示模型版本、置信度、限制和待复核事项。",
+    "source": "internal_sop",
+    "metadata": {"modality": "MRI", "document_type": "report_sop", "version": "1.0"}
+  }
+]

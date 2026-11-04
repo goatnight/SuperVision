@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "intended_use": {
+    "role": "concurrent_radiologist_decision_support",
+    "task": "lumbar_spondylolisthesis_screening_on_sagittal_mri",
+    "intended_user": "qualified_radiologist",
+    "population": "adult_patients_referred_for_lumbar_mri",
+    "output": "calibrated_ai_probability_and_mandatory_review_disposition",
+    "autonomous_diagnosis": false,
+    "exclusions": [
+      "pediatric_patient",
+      "postoperative_instrumentation",
+      "severe_deformity_or_destructive_lesion",
+      "non_sagittal_or_non_lumbar_series",
+      "image_outside_validated_acquisition_domain"
+    ]
+  },
+  "triage": {
+    "target_rule_out_sensitivity": 0.95,
+    "target_rule_in_specificity": 0.95,
+    "minimum_validation_cases_per_class": 100
+  },
+  "input_qc": {
+    "expected_dimensions": 3,
+    "minimum_in_plane_size": 128,
+    "minimum_slices": 3,
+    "minimum_finite_fraction": 0.999,
+    "minimum_nonzero_fraction": 0.01,
+    "maximum_nonzero_fraction": 0.99,
+    "minimum_dynamic_range": 0.000001,
+    "minimum_roi_foreground_fraction": 0.05,
+    "maximum_roi_foreground_fraction": 0.65,
+    "minimum_segmentation_labels": 4
+  },
+  "qualification": {
+    "minimum_external_test_cases": 500,
+    "minimum_cases_per_external_center": 100,
+    "minimum_auc_ci_lower": 0.8,
+    "minimum_sensitivity_ci_lower": 0.8,
+    "minimum_specificity_ci_lower": 0.8,
+    "maximum_ece": 0.05,
+    "minimum_rule_out_npv_ci_lower": 0.9,
+    "minimum_rule_in_ppv_ci_lower": 0.9,
+    "require_locked_external_validation": true,
+    "require_prospective_validation": true,
+    "require_mrmc_reader_study": true,
+    "require_documented_reference_standard": true,
+    "require_representative_prevalence": true,
+    "require_demographic_subgroup_audit": true,
+    "require_local_site_acceptance_test": true,
+    "require_regulatory_or_irb_authorization": true
+  },
+  "evidence": {
+    "validation_design": "internal_patient_level_split_across_known_centers",
+    "locked_external_validation": false,
+    "prospective_validation": false,
+    "mrmc_reader_study": false,
+    "documented_reference_standard": false,
+    "representative_prevalence": false,
+    "demographic_subgroup_audit": false,
+    "local_site_acceptance_test": false,
+    "regulatory_or_irb_authorization": false,
+    "test_set_reused_after_initial_evaluation": true
+  }
+}
