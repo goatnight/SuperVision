@@ -13,6 +13,16 @@
 - 报告复核：查看结构化 Findings/Impression，接受、修改或驳回草稿。
 - 质量监管：集中展示 Verifier 发现的节段、数值和证据一致性问题。
 
+## 界面预览
+
+### 脊柱分割与量化工作台
+
+![SpineVision 脊柱分割与量化工作台](docs/images/spinevision-segmentation-workbench.png)
+
+### 结构量化报告
+
+![SpineVision 结构量化报告](docs/images/spinevision-quantification-report.png)
+
 ## 架构
 
 ```mermaid
